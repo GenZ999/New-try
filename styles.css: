@@ -1,13 +1,50 @@
-/* ... Existing CSS code ... */
+/* Reset default styles */
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Global styles */
+body {
+  font-family: 'Helvetica Neue', Arial, sans-serif;
+  line-height: 1.6;
+  color: #333;
+  background-color: #f9f9f9;
+}
 
 /* Header styles */
 header {
   background-color: #333;
   color: #fff;
   padding: 20px;
+  transition: background-color 0.3s;
 }
 
-/* ... Existing CSS code ... */
+header:hover {
+  background-color: #8a2be2; /* Purple color on hover */
+}
+
+nav ul {
+  list-style-type: none;
+  display: flex;
+}
+
+nav ul li {
+  margin-right: 20px;
+}
+
+nav ul li a {
+  color: #fff;
+  text-decoration: none;
+  transition: color 0.3s;
+}
+
+nav ul li a:hover {
+  color: #8a2be2; /* Purple color on hover */
+}
 
 /* Main content styles */
 section {
@@ -15,15 +52,35 @@ section {
   margin-bottom: 40px;
   background-color: #fff;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.3s, transform 0.3s;
+}
+
+section.show {
+  opacity: 1;
+  transform: translateY(0);
 }
 
 h1 {
   font-size: 36px;
   margin-bottom: 20px;
-  color: #8a2be2; /* Updated color to a live purple shade */
+  color: #7b68ee;
+  transition: color 0.3s;
 }
 
-/* ... Existing CSS code ... */
+h1:hover {
+  color: #8a2be2; /* Purple color on hover */
+}
+
+p {
+  margin-bottom: 10px;
+  transition: color 0.3s;
+}
+
+p:hover {
+  color: #8a2be2; /* Purple color on hover */
+}
 
 /* Footer styles */
 footer {
@@ -31,4 +88,9 @@ footer {
   color: #fff;
   padding: 20px;
   text-align: center;
+  transition: background-color 0.3s;
+}
+
+footer:hover {
+  background-color: #8a2be2; /* Purple color on hover */
 }
