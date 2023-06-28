@@ -1,0 +1,17 @@
+// JavaScript code for smooth scrolling
+document.addEventListener('DOMContentLoaded', () => {
+  const links = document.querySelectorAll('nav ul li a');
+
+  for (const link of links) {
+    link.addEventListener('click', scrollToSection);
+  }
+
+  function scrollToSection(event) {
+    event.preventDefault();
+    const targetId = this.getAttribute('href');
+    const targetSection = document.querySelector(targetId);
+    targetSection.scrollIntoView({
+      behavior: 'smooth'
+    });
+  }
+});
